@@ -138,7 +138,7 @@ function fizzBuzz(num) {
       return "fizz";
    } else if (num % 5 === 0) {
       return "buzz";
-   } else if (num % 3 !== 0 || num % 5 !== 0) {
+   } else {
       return false
    }
 }
@@ -151,7 +151,22 @@ function operadoresLogicos(num1, num2, num3) {
    // Si todos los argumentos son cero, retornar ---> "Error".
    // Si no se cumple ninguna de las condiciones anteriores, retornar false.
    // Tu código:
+   if (num1 > num2 && num1 > num3) return "Numero 1 es mayor y positivo"
+   if (num1 < 0 || num2 < 0 || num3 < 0) return "Hay negativos"
+   if (num3 > num1 && num3 > num2) {
+      num3++
+      return num3 
+   } if (num1 === 0 && num2 === 0 && num3 === 0) return "Error"
+   else {
+      return false
+   }
 }
+
+console.log(operadoresLogicos(10, 2, 3));
+console.log(operadoresLogicos(-10, 2, 3));
+console.log(operadoresLogicos(1, 2, 7));
+console.log(operadoresLogicos(0, 0, 0));
+console.log(operadoresLogicos(1, 22, 3));
 
 function esPrimo(num) {
    // Retornar true si "num" es primo.
@@ -160,18 +175,27 @@ function esPrimo(num) {
    // [Pista 2]: puedes resolverlo utilizando un `bucle for`.
    // [Nota]: los números negativos, 0 y 1 NO son números primos.
    // Tu código:
+   if (num <= 1) return false; 
+   for (let i = 2; i <= Math.sqrt(num); i++) {
+   if (num % i === 0) 
+      return false;
+   } return true;
 }
 
 function esVerdadero(valor) {
    // Si "valor" es verdadero retornar "Soy verdadero".
    // Caso contrario, retornar "Soy falso".
    // Tu código:
+   if (valor) return "Soy verdadero";
+   else { return "Soy falso"}
 }
 
 function tieneTresDigitos(num) {
    // Si el número recibido tiene tres dígitos retornar true.
    // Caso contrario, retornar false.
    // Tu código:
+   if (num >= 100 && num <= 999) return true;
+   else { return false}
 }
 
 function doWhile(num) {
@@ -179,6 +203,12 @@ function doWhile(num) {
    // Retornar el valor final.
    // Utilizar el bucle Do-While.
    // Tu código:
+   let contador = 0;
+   do {
+      num += 5;
+      contador++;
+   } while (contador < 8);
+  return num;
 }
 
 /*⚠️ NO MODIFIQUES NADA DEBAJO DE ESTO ⚠️*/
