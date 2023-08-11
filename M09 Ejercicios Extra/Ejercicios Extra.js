@@ -45,6 +45,16 @@ function capToFront(string) {
    // Retornar el string.
    // [EJEMPLO]: soyHENRY ---> HENRYsoy
    // Tu código:
+   let mayuscula = '';
+   let minúscula = '';
+
+   for (let i = 0; i < string.length; i++) {
+      if (string[i] === string[i].toUpperCase()) {
+         mayuscula += string[i];
+      } else {
+         minúscula += string[i];
+      }
+   } return mayuscula + minúscula;
 }
 
 function asAmirror(frase) {
